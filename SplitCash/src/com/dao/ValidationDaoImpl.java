@@ -24,7 +24,7 @@ public class ValidationDaoImpl implements ValidationDaoI{
 	@Override
 	public User validateUser(String name, String pass) {
 		
-		String hql="from User where name=? and password=?";
+		String hql="from User where phone=? and password=?";
 		Object[] params={name,pass};
 		List<User> lst=hibernateTemplate.find(hql,params);
 		if(lst.size()!=0)
