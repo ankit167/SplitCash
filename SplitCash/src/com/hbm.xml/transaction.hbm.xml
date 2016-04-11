@@ -4,13 +4,12 @@
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.entity.TransactionFulfillment" table="transactionfulfillment">
-		<id name="transaction_id" column="transaction_id" type="int">
+	<class name="com.entity.Transaction" table="transaction">
+		<id name="id" column="id" type="int">
 			<generator class="assigned" />
 		</id>
 		<property name="user_id" column="user_id" not-null="true" length="10"/>
 		<property name="product_id" column="product_id" not-null="true" length="10"/>
-		<property name="paid" column="paid" not-null="true" length="10"/>
 		<property name="status" column="status" not-null="true" length="10"/>
 	</class>
 

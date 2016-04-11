@@ -39,8 +39,8 @@
 		<list>
 			<value>com/hbm.xml/user.hbm.xml</value>
 			<value>com/hbm.xml/product.hbm.xml</value>
-			<value>com/hbm.xml/splittransaction.hbm.xml</value>
-			<value>com/hbm.xml/transactionfulfillment.hbm.xml</value>
+			<value>com/hbm.xml/split.hbm.xml</value>
+			<value>com/hbm.xml/transaction.hbm.xml</value>
 			<value>com/hbm.xml/wallet.hbm.xml</value>
 		</list>
 		</property>
@@ -60,7 +60,7 @@
 	
 <!--  create dao bean -->
 	
-	<bean id="regdao" class="com.dao.RegistrationDaoImpl">
+	<bean id="validdao" class="com.dao.ValidationDaoImpl">
 	<property name="hibernateTemplate" ref="hibernateTemplateBean"/>
 	</bean>
 

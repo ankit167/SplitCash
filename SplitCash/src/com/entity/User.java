@@ -2,18 +2,16 @@ package com.entity;
 
 public class User {
 
-	private int user_id;
+	private int id;
 	private int phone;
 	private String name;
-	private String email;
 	private String password;
 	private int wallet_id;
-	
-	public int getUser_id() {
-		return user_id;
+	public int getId() {
+		return id;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public int getPhone() {
 		return phone;
@@ -27,12 +25,6 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	public String getPassword() {
 		return password;
 	}
@@ -45,5 +37,19 @@ public class User {
 	public void setWallet_id(int wallet_id) {
 		this.wallet_id = wallet_id;
 	}
+	public User(int id, int phone, String name, String password, int wallet_id) {
+		super();
+		this.id = id;
+		this.phone = phone;
+		this.name = name;
+		this.password = password;
+		this.wallet_id = wallet_id;
+	}
+	public User() {
+		super();
+	}
+	
+	
+	
 	
 }

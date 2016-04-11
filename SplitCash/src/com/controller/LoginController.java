@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.dao.ValidateDaoImpl;
+import com.dao.ValidationDaoImpl;
 import com.dao.ValidationDaoI;
 import com.entity.User;
 
@@ -20,13 +20,13 @@ import com.entity.User;
 public class LoginController {
 
 	@Autowired
-	private ValidateDaoImpl validdao;	
+	private ValidationDaoImpl validdao;	
 
-	public ValidateDaoImpl getValiddao() {
+	public ValidationDaoImpl getValiddao() {
 		return validdao;
 	}
 
-	public void setValiddao(ValidateDaoImpl validdao) {
+	public void setValiddao(ValidationDaoImpl validdao) {
 		this.validdao = validdao;
 	}
 
@@ -57,7 +57,7 @@ public class LoginController {
 			User user=validate(name,password);
 			if(user!=null){
 				HttpSession sess=request.getSession();
-				sess.setAttribute("user_id",user.getUser_id());
+				sess.setAttribute("user_id",user.getId());
 				sess.setAttribute("phone",user.getPhone());
 				sess.setAttribute("name",user.getName());
 				sess.setAttribute("flag", 0);

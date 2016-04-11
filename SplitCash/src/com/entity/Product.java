@@ -2,36 +2,36 @@ package com.entity;
 
 public class Product {
 
-	private int product_id;
-	private String productname;
+	private int id;
+	private String name;
 	private int  price;
-	private String seller;
-	
-	public String getSeller() {
-		return seller;
+	public int getId() {
+		return id;
 	}
-	public void setSeller(String seller) {
-		this.seller = seller;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public int getProduct_id() {
-		return product_id;
+	public String getName() {
+		return name;
 	}
-	public void setProduct_id(int product_id) {
-		this.product_id = product_id;
-	}
-	public String getProductname() {
-		return productname;
-	}
-	public void setProductname(String productname) {
-		this.productname = productname;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public int getPrice() {
 		return price;
 	}
-	public void setPrice(Integer price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
-	
+	public Product(int id, String name, int price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+	}
+	public Product() {
+		super();
+	}
 	
 		
 }

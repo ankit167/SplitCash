@@ -2,14 +2,13 @@ package com.entity;
 
 public class Wallet{
 	
-	private int wallet_id;
+	private int id;
 	private int amount;
-	
-	public int getWallet_id() {
-		return wallet_id;
+	public int getId() {
+		return id;
 	}
-	public void setWallet_id(int wallet_id) {
-		this.wallet_id = wallet_id;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public int getAmount() {
 		return amount;
@@ -17,7 +16,14 @@ public class Wallet{
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-
+	public Wallet(int id, int amount) {
+		super();
+		this.id = id;
+		this.amount = amount;
+	}
+	public Wallet() {
+		super();
+	}
 	
 	
 }

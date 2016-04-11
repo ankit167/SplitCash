@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.dao.RegistrationDaoI;
-import com.dao.RegistrationDaoImpl;
 import com.entity.User;
 
 @Controller

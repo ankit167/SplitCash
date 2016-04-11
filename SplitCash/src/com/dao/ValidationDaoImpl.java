@@ -6,7 +6,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.entity.User;
 
-public class ValidateDaoImpl implements ValidationDaoI{
+public class ValidationDaoImpl implements ValidationDaoI{
 
 	
 	private HibernateTemplate hibernateTemplate;
