@@ -5,7 +5,6 @@ public class Transaction {
 	private int id;
 	private int user_id;
 	private int product_id;
-	private boolean status;
 	private int collected_money;
 	
 	public int getCollected_money() {
@@ -32,18 +31,12 @@ public class Transaction {
 	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
 	}
-	public boolean isStatus() {
-		return status;
-	}
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
+
 	public Transaction(int id, int user_id, int product_id, boolean status) {
 		super();
 		this.id = id;
 		this.user_id = user_id;
 		this.product_id = product_id;
-		this.status = status;
 	}
 	public Transaction() {
 		super();

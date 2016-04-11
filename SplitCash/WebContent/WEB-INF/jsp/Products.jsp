@@ -4,6 +4,84 @@
 
 <html>
   <head>
+  
+  	<style>
+ .modalDialog {
+   position: fixed;
+   font-family: Arial, Helvetica, sans-serif;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: rgba(0,0,0,0.8);
+   z-index: 99999;
+   opacity:0;
+   -webkit-transition: opacity 400ms ease-in;
+   -moz-transition: opacity 400ms ease-in;
+   transition: opacity 400ms ease-in;
+   pointer-events: none;
+ }
+
+ .modalDialog:target {
+   opacity:1;
+   pointer-events: auto;
+ }
+
+ .modalDialog > div {
+   width: 400px;
+   position: relative;
+   margin: 10% auto;
+   padding: 5px 20px 13px 20px;
+   border-radius: 10px;
+   background: #fff;
+   background: -moz-linear-gradient(#fff, #999);
+   background: -webkit-linear-gradient(#fff, #999);
+   background: -o-linear-gradient(#fff, #999);
+ }
+
+ .close {
+   background: #606061 ;
+   color: #FFFFFF ;
+   line-height: 25px;
+   position: absolute;
+   right: -12px;
+   text-align: center;
+   top: -10px;
+   width: 24px;
+   text-decoration: none;
+   font-weight: bold;
+   -webkit-border-radius: 12px;
+   -moz-border-radius: 12px;
+   border-radius: 12px;
+   -moz-box-shadow: 1px 1px 3px #000;
+   -webkit-box-shadow: 1px 1px 3px #000;
+   box-shadow: 1px 1px 3px #000;
+ }
+
+ .allow {
+   background-color: #4CAF50 ;
+   border: none;
+   color: white;
+   padding: 15px 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+ }
+
+ .deny {
+   background-color: #ff884c ;
+   border: none;
+   color: white;
+   padding: 15px 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+ }
+
+ .close:hover { background: #00d9ff ; }
+ </style>
     <title>SnapSplit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
@@ -19,6 +97,45 @@
     <link href="css/686tees.css" rel="stylesheet" type="text/css" />
   </head>
 <body>
+
+<c:if test="${notify = 'true'}">
+   <c:set value="#openModal" var="notify"></c:set>
+   </c:if>
+   
+   <c:if test="${notify = 'false'}">
+   <c:set value="#" var="notify"></c:set>
+   </c:if>
+   
+   <a href=${notify}>Notification</a>
+
+   <div id="openModal" class="modalDialog">
+ <div>
+   <a href="#close" title="Close" class="close">X</a>
+   <table classstyle="border-color: black; border-width: 2px;">
+     <tr><td colspan="2" align="center" ><h2>Pending Split Share</h2></td></tr>
+     <tr>
+     <td>
+       
+   
+     
+     <a href="product.html"><img style="height: 200px; width: 180px" src="assets/img/product-1.jpg" alt="Ibiza Lips" /></a>
+     
+     
+     </td>
+     <td style="text-align: center; ">
+       <p class="title">Sony Playstation</a></p>
+     
+       <p><label>Ordered By: </label><span>${initiator}</span></p>
+       <p><label>Total Amount: </label><span>&#x20B9; ${product.price}</span></p>
+       <p><label>My Share: </label><span>&#x20B9; ${topay}</span></p>
+       <!-- Buttons Here -->
+       <button class="deny">Deny</button>&nbsp;&nbsp;
+       <button class="allow">Allow</button>
+     </td>
+     </tr>
+   </table>
+ </div>
+</div>
 
 <div class="container">
   <!-- Site Top -->

@@ -42,6 +42,7 @@
 			<value>com/hbm.xml/split.hbm.xml</value>
 			<value>com/hbm.xml/transaction.hbm.xml</value>
 			<value>com/hbm.xml/wallet.hbm.xml</value>
+			<value>com/hbm.xml/transaction_status.hbm.xml</value>
 		</list>
 		</property>
 		<property name="hibernateProperties">

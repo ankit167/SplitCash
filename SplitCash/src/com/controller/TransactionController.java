@@ -29,7 +29,7 @@ public class TransactionController {
             this.transdao = transdao;
     }
 
-    @RequestMapping(value="splitamount.htm",method=RequestMethod.GET)
+    /*@RequestMapping(value="splitamount.htm",method=RequestMethod.GET)
     public String setSplitParameters(HttpServletRequest request,Model model){
             int initiator_id=(int) request.getSession().getAttribute("user_id");
             String[] phone=request.getParameterValues("phonenumber");
@@ -45,7 +45,7 @@ public class TransactionController {
             }
             return "Products";
             	
-    }
+    }*/
     
 
 }

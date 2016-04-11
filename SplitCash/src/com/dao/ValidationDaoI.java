@@ -12,6 +12,7 @@ public interface ValidationDaoI {
 	public User validateUser(String name,String pass);
 	public List<Product> proDetails();
 	public String getInitiator(int transaction_id);
-	//public String getProduct(int transaction_id);
+	public Product getProduct(int transaction_id);
 	public Product getProductDetails(int id);
+	public int getWalletBalance(int user_id);
 }
