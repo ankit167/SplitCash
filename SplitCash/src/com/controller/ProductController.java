@@ -37,7 +37,6 @@ public class ProductController {
 	{
 		List<Product> products = validdao.proDetails();
 		model.addAttribute("products", products);
-		System.out.println("Abishek");
 		return "Products";
 	}
 
