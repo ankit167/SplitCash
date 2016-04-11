@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
+import com.entity.Product;
 import com.entity.User;
 
 public class ValidationDaoImpl implements ValidationDaoI{
@@ -31,5 +32,13 @@ public class ValidationDaoImpl implements ValidationDaoI{
 			return lst.get(0);
 		return null;
 	}
+	
+	@Override
+    public List<Product> proDetails()
+    {
+        String hql="from Product";
+        List<Product> products=hibernateTemplate.find(hql);
+        return products;    
+    }
 	
 }

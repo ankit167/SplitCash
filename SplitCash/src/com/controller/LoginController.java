@@ -1,8 +1,9 @@
 package com.controller;
 
+import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.*;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,8 +62,7 @@ public class LoginController {
 				sess.setAttribute("phone",user.getPhone());
 				sess.setAttribute("name",user.getName());
 				sess.setAttribute("flag", 0);
-				response.sendRedirect("/Product/productdetails.htm");
-				//return "Products";
+				return "redirect:/Product/productdetails.htm";
 			}
 			model.addAttribute("invaliduserlogin","The username and password do not match");
 			return "Login";
