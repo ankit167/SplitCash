@@ -63,6 +63,9 @@
 	<bean id="validdao" class="com.dao.ValidationDaoImpl">
 	<property name="hibernateTemplate" ref="hibernateTemplateBean"/>
 	</bean>
-
+	
+	<bean id="transdao" class="com.dao.TransactionDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplateBean"/>
+	</bean>
 	
 </beans>

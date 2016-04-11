@@ -3,7 +3,7 @@ package com.entity;
 public class User {
 
 	private int id;
-	private int phone;
+	private String phone;
 	private String name;
 	private String password;
 	private int wallet_id;
@@ -13,10 +13,10 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public String getName() {
@@ -37,7 +37,7 @@ public class User {
 	public void setWallet_id(int wallet_id) {
 		this.wallet_id = wallet_id;
 	}
-	public User(int id, int phone, String name, String password, int wallet_id) {
+	public User(int id, String phone, String name, String password, int wallet_id) {
 		super();
 		this.id = id;
 		this.phone = phone;
