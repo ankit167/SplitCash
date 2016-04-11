@@ -6,6 +6,7 @@ public class Transaction {
 	private int user_id;
 	private int product_id;
 	private boolean status;
+	
 	public int getId() {
 		return id;
 	}
