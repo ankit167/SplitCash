@@ -6,7 +6,7 @@
 <hibernate-mapping>
 	<class name="com.entity.Split" table="split">
 		<id name="id" column="id" type="int">
-			<generator class="assigned" />
+			<generator class="increment" />
 		</id>
 		<property name="transaction_id" column="transaction_id" length="10"  />
 		<property name="user_id" column="user_id" length="10" />

@@ -6,7 +6,7 @@
 <hibernate-mapping>
 	<class name="com.entity.Wallet" table="wallet">
 		<id name="id" column="id" type="int">
-			<generator class="assigned" />
+			<generator class="increment" />
 		</id>
 		<property name="amount" column="amount" not-null="true" length="10"/>
 	</class>

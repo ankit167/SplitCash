@@ -29,21 +29,23 @@ public class TransactionController {
             this.transdao = transdao;
     }
 
-    @RequestMapping(value="split.htm",method=RequestMethod.GET)
-    public void setSplitParameters(HttpServletRequest request,Model model){
-            int initiator=(int) request.getSession().getAttribute("user_id");
-            int product_id=Integer.parseInt(request.getParameter("product"));
+    @RequestMapping(value="splitamount.htm",method=RequestMethod.GET)
+    public String setSplitParameters(HttpServletRequest request,Model model){
+            int initiator_id=(int) request.getSession().getAttribute("user_id");
+            String[] phone=request.getParameterValues("phonenumber");
+            String[] amt=request.getParameterValues("amount");
+           
+            int product_id=(int) (request.getSession().getAttribute("product_id"));
+            boolean status=false;
+            int transaction_id=transdao.setBaseTransaction(transdao.maxKey("Transaction", "id")+1,initiator_id,product_id,status);
+            int state=transdao.setSplit(transdao.maxKey("Split", "id")+1,transaction_id,phone,amt);
+            if(state==-1){
+            	model.addAttribute("invaliduserlogin","The username and password do not match");
+            	return "Split";
+            }
+            return "Products";
+            	
     }
     
-    /*
-    @RequestMapping(value="user.htm",method=RequestMethod.GET)
-    public String index1(HttpServletRequest request,Model model){
-            System.out.println(request.getSession().getAttribute("flag"));
-            if(request.getSession(false).getAttribute("flag")==null)
-                    return "redirect:login.htm";
-            return "Products";
-    }
-    */
-
 
 }

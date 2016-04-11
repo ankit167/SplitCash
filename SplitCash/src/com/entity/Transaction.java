@@ -1,12 +1,19 @@
 package com.entity;
 
 public class Transaction {
-
+	
 	private int id;
 	private int user_id;
 	private int product_id;
 	private boolean status;
+	private int collected_money;
 	
+	public int getCollected_money() {
+		return collected_money;
+	}
+	public void setCollected_money(int collected_money) {
+		this.collected_money = collected_money;
+	}
 	public int getId() {
 		return id;
 	}

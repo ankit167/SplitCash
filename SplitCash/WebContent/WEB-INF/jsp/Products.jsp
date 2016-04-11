@@ -1,34 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<!DOCTYPE html>
 <html>
   <head>
-  
-    <title>Snap Split</title>
+    <title>SnapSplit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     
     <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
     
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
-    <link href="assets/css/entypo.css" rel="stylesheet" type="text/css" />
+    <link href="css/entypo.css" rel="stylesheet" type="text/css" />
     
     <!-- Template CSS -->
-    <link href="assets/css/686tees.css" rel="stylesheet" type="text/css" />
-    
+    <link href="css/686tees.css" rel="stylesheet" type="text/css" />
   </head>
 <body>
 
 <div class="container">
-  
   <!-- Site Top -->
-  
   <div class="row">
-  
     <div class="span12">
     
       <ul class="top-nav">
@@ -38,161 +32,97 @@
       </ul>
     
     </div>
-  
   </div>
-  
   <!-- Header -->
   
   <div class="row">
-  
     <div class="span4">
-    
       <p class="logo">
-        <span class="entypo heart"></span> Split Cash
+        <span class="entypo heart"></span>SplitDeal
       </p>
-    
     </div>
   
     <div class="span4">
-    
       <p class="strapline">
-        Dil Ki Deal<br />
+        Dil Ki Deal<br/>
         <span>Mil Baant Ke</span>
       </p>
-    
     </div>
-  
-    <div class="span4">
-      
-      <div class="row">
-        
-        <div class="span2 offset2 mini-basket">
-          
-          <p class="mini-basket-title"><a href="basket.html"><span class="entypo cart"></span> Basket</a></p>
-          
-          <div class="row">
-            
-            <div class="span1">
-              <p class="mini-basket-summary">
-                Price<br />
-                <span>&#x20B9;0.00</span>
-              </p>
-            </div>
-          
-            <div class="span1">
-              <p class="mini-basket-summary">
-                Items<br />
-                <span>0</span>
-              </p>
-            </div>
-          
-          </div>
-          
-        </div>
-      
-      </div>
-      
-    </div>
-  
   </div>
-  
   <!-- Menu -->
   
   <div class="row">
-    
     <div class="span12">
-    
       <ul class="main-nav clearfix">
-      
         <li class="active"><a href="index.html">Products</a></li>
-      
       </ul>
-    
     </div>
-    
   </div>
 
   <!-- Body -->
   
   <div class="row">
-    
     <div class="span12">
-    
-      <h1>New Products</h1>
-    
+      <h1></h1>
     </div>
-    
   </div>
-
-  <!-- Product Listing -->
   
   <div class="row">
+    <div class="span4 product-listing">
+      <p class="title"><a href="product.html">Samsung 40J3000 Curved LEDTV</a></p>
+      <a href="#"><img class="image" src="img/prod1.jpg" alt="Samsung Curved LEDTV" /></a>
+      <p class="price">
+        &#8377; 50,330
+        <form action="split.htm" method="get">
+           <input type="hidden" name="productId" value="1"/>
+           <input class="btn btn-primary pull-right" type="submit" value="Buy Now"/>
+	</form>
+      </p> 
+    </div>
     
     <div class="span4 product-listing">
-    
-      <p class="title"><a href="product.html">Ibiza Lips</a></p>
-      
-      <a href="product.html"><img class="image" src="assets/img/product-1.jpg" alt="Ibiza Lips" /></a>
-      
+      <p class="title"><a href="product.html">Philips DSP2800 5.1 Speaker System</a></p>
+      <a href="#"><img class="image" src="img/prod2.jpg" alt="Philips DSP2800" /></a>
       <p class="price">
-        &pound; 9.99
-        <a class="btn btn-addcart btn-primary" href="basket.html"><span class="entypo cart"></span></a><a class="btn btn-view btn-grey" href="product.html"><span class="entypo search"></span></a>
+         &#8377; 3,500
+         <form action="split.htm" method="get">
+           <input type="hidden" name="productId" value="2"/>
+           <input class="btn btn-primary pull-right" type="submit" value="Buy Now"/>
+	 </form>
       </p>
       
     </div>
     
     <div class="span4 product-listing">
-    
-      <p class="title"><a href="product.html">Ibiza Banana</a></p>
-      
-      <a href="product.html"><img class="image" src="assets/img/product-2.jpg" alt="Ibiza Banana" /></a>
-      
+      <p class="title"><a href="product.html">Sony PlayStation4</a></p>
+      <a href="#"><img class="image" src="img/prod3.jpg" alt="Sony PlayStation4" /></a>
       <p class="price">
-        &pound; 9.99
-        <a class="btn btn-addcart btn-primary" href="basket.html"><span class="entypo cart"></span></a><a class="btn btn-view btn-grey" href="product.html"><span class="entypo search"></span></a>
+        &#8377; 33,889
+        <form action="split.htm" method="get">
+           <input type="hidden" name="productId" value="3"/>
+           <input class="btn btn-primary pull-right" type="submit" value="Buy Now"/>
+	</form>
       </p>
-      
     </div>
-    
-    <div class="span4 product-listing">
-    
-      <p class="title"><a href="product.html">I Was There</a></p>
-      
-      <a href="product.html"><img class="image" src="assets/img/product-3.jpg" alt="I Was There" /></a>
-      
-      <p class="price">
-        &pound; 9.99
-        <a class="btn btn-addcart btn-primary" href="basket.html"><span class="entypo cart"></span></a><a class="btn btn-view btn-grey" href="product.html"><span class="entypo search"></span></a>
-      </p>
-      
-    </div>
-    
   </div>
 
   
   <div class="row footer">
-  
     <div class="span6">
-    
       <ul class="footer-nav">
-        <li><a href=""><img src="assets/flags/gb.png" alt="GBP" /></a> &nbsp; <a href=""><img src="assets/flags/us.png" alt="USD" /></a> &nbsp; <a href=""><img src="assets/flags/europeanunion.png" alt="Euro" /></a></li>
-        <li><a href="content.html">Terms &amp; Conditions</a></li>
-        <li><a href="content.html">Delivery Information</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Delivery Information</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
-    
     </div>
   
     <div class="span6 footer-right">
-    
       <p>
-        &copy; 686 Tees
+        &copy; SplitDeal
       </p>
-    
     </div>
   
   </div>
-  
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
