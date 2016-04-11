@@ -19,31 +19,31 @@ import com.entity.User;
 @Controller
 public class TransactionController {
 
-	@Autowired
-	private TransactionDaoImpl transdao;	
+        @Autowired
+        private TransactionDaoImpl transdao;
+        public TransactionDaoImpl getTransdao() {
+            return transdao;
+    }
 
-	public TransactionDaoImpl getTransdao() {
-		return transdao;
-	}
+    public void setTransdao(TransactionDaoImpl transdao) {
+            this.transdao = transdao;
+    }
 
-	public void setTransdao(TransactionDaoImpl transdao) {
-		this.transdao = transdao;
-	}
-	
-	@RequestMapping(value="split.htm",method=RequestMethod.GET)
-	public void setSplitParameters(HttpServletRequest request,Model model){
-		int initiator=(int) request.getSession().getAttribute("user_id");
-		int product_id=Integer.parseInt(request.getParameter("product"));
-	}
-/*
-	@RequestMapping(value="user.htm",method=RequestMethod.GET)
-	public String index1(HttpServletRequest request,Model model){
-		System.out.println(request.getSession().getAttribute("flag"));
-		if(request.getSession(false).getAttribute("flag")==null)
-			return "redirect:login.htm";
-		return "Products";
-	}
-	*/
-	
-	
+    @RequestMapping(value="split.htm",method=RequestMethod.GET)
+    public void setSplitParameters(HttpServletRequest request,Model model){
+            int initiator=(int) request.getSession().getAttribute("user_id");
+            int product_id=Integer.parseInt(request.getParameter("product"));
+    }
+    
+    /*
+    @RequestMapping(value="user.htm",method=RequestMethod.GET)
+    public String index1(HttpServletRequest request,Model model){
+            System.out.println(request.getSession().getAttribute("flag"));
+            if(request.getSession(false).getAttribute("flag")==null)
+                    return "redirect:login.htm";
+            return "Products";
+    }
+    */
+
+
 }
