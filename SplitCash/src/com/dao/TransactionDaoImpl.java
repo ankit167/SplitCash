@@ -2,6 +2,10 @@ package com.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.entity.Split;
@@ -52,7 +56,7 @@ public class TransactionDaoImpl implements TransactionDaoI{
         	 s.setTopay(amount[i]);
         	 s.setConsent("");
         	 hibernateTemplate.save(s);
-        	 updateWalletBalance(user_id[i],amount[i]);
+        	// updateWalletBalance(user_id[i],amount[i]);
          }
       
          return 0;
@@ -99,6 +103,16 @@ public class TransactionDaoImpl implements TransactionDaoI{
 		if(lst == null||lst.get(0)==null) return 0;
 		return lst.get(0);
 	}
+
+	@Override
+	public void setUserConsent(int user_id, String consent) {
+		// TODO Auto-generated method stub
+		String hql = "update split set consent=? where Id=?";
+		Object[] params = {consent,user_id};
+		hibernateTemplate.update(params);
+	}
+
+	
 
 	
 }

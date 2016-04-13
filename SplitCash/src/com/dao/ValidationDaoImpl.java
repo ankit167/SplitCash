@@ -46,10 +46,12 @@ public class ValidationDaoImpl implements ValidationDaoI{
 
    @Override
    public Split notification(int user_id){
-        String hql = "select s.transaction_id, s.topay from Split s where user_id=? and consent=?";
-        Object[] params = { user_id,"" };
-        List<Split> s = hibernateTemplate.find(hql, params);
-        return s.get(0);
+		   String hql = "from Split where user_id=? and consent=?";
+	        Object[] params = { user_id,"" };
+	        List<Split> s = hibernateTemplate.find(hql, params);
+	        if(s.size()!=0)
+	        	return s.get(0);  
+	        return null;
    }
 	
    @Override
@@ -57,14 +59,15 @@ public class ValidationDaoImpl implements ValidationDaoI{
        String hql="select t.user_id from Transaction t where id=?";
        Object[] params1 = { transaction_id };
        List<Integer> uid=hibernateTemplate.find(hql,params1);
-       hql="select ts.status from TransactionStatus ts where id=?";
+       hql="select ts.status from Transaction_Status ts where id=?";
        Object[] params2 = { transaction_id };
-       List<Boolean> status=hibernateTemplate.find(hql,params2);
+       List<String> status=hibernateTemplate.find(hql,params2);
        if(status.get(0).equals("ok")==false){
            hql="select u.name from User u where id=?";
            Object[] params3 = { uid.get(0) };
            List<String> uname=hibernateTemplate.find(hql,params3);
-           return uname.get(0);
+           if(uname.get(0)!=null)
+               return uname.get(0);
        }
        return "";
    }

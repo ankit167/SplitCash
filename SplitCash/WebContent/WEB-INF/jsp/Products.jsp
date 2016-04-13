@@ -1,5 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -95,18 +97,29 @@
     
     <!-- Template CSS -->
     <link href="css/686tees.css" rel="stylesheet" type="text/css" />
+    
+    <script>
+    
+    function gothere()
+    {
+    	document.someForm.action = "consent.htm";
+    	document.someForm.submit();
+    }
+    
+    </script>
   </head>
 <body>
 
-<c:if test="${notify = 'true'}">
-   <c:set value="#openModal" var="notify"></c:set>
+<c:if test="${notify=='true'}">
+	
+   <c:set value="#openModal" var="notifier"></c:set>
    </c:if>
    
-   <c:if test="${notify = 'false'}">
-   <c:set value="#" var="notify"></c:set>
+   <c:if test="${notify=='false'}">
+   <c:set value="#" var="notifier"></c:set>
    </c:if>
    
-   <a href=${notify}>Notification</a>
+   <a href=${notifier}>Notification</a>
 
    <div id="openModal" class="modalDialog">
  <div>
@@ -118,25 +131,25 @@
        
    
      
-     <a href="product.html"><img style="height: 200px; width: 180px" src="assets/img/product-1.jpg" alt="Ibiza Lips" /></a>
      
      
      </td>
      <td style="text-align: center; ">
-       <p class="title">Sony Playstation</a></p>
+       <p class="title">${product.name}</a></p>
      
        <p><label>Ordered By: </label><span>${initiator}</span></p>
        <p><label>Total Amount: </label><span>&#x20B9; ${product.price}</span></p>
        <p><label>My Share: </label><span>&#x20B9; ${topay}</span></p>
        <!-- Buttons Here -->
-       <button class="deny">Deny</button>&nbsp;&nbsp;
-       <button class="allow">Allow</button>
+       <form action="consent.htm" method="get">
+       <button type="submit" "deny" name="consent" value="deny">Deny</button>&nbsp;&nbsp;
+       <button type="submit" "allow" name="consent" value="allow">Allow</button>
+       </form>
      </td>
      </tr>
    </table>
  </div>
 </div>
-
 <div class="container">
   <!-- Site Top -->
   <div class="row">

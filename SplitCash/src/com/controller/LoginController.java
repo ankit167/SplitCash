@@ -74,7 +74,10 @@ public class LoginController {
 		
 			User user=validate(name,password);
 			if(user!=null){
-				HttpSession sess=request.getSession();
+				HttpSession sess=request.getSession(true);
+				if(sess.isNew()==false)
+					sess.invalidate();
+				sess = request.getSession(true);
 				sess.setAttribute("user_id",user.getId());
 				sess.setAttribute("phone",user.getPhone());
 				sess.setAttribute("name",user.getName());
@@ -175,8 +178,27 @@ public class LoginController {
             	return "Split";
             }
             transdao.setTransactionStatus(transdao.maxKey("Transaction_Status", "id")+1,status);
-            return "Products";
+            return "Payment";
             	
     }
+	
+	@RequestMapping(value="consent.htm",method=RequestMethod.GET)
+	public String handleConsent(HttpServletRequest request, Model model)
+	{
+		String consent = request.getParameter("consent");
+		HttpSession sess = request.getSession(true);
+		int user_id = Integer.parseInt(sess.getAttribute("user_id").toString());
+		if(consent.equals("allow"))
+		{
+			//transdao.setUserConsent(user_id, "allow");
+			
+			return "Payment";
+		}
+		else
+		{
+			//transdao.setUserConsent(user_id, "deny");
+			return "Products";
+		}
+	}
 	
 }
